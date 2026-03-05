@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Sansay SHAKEN Cert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="checkout-page">
+
+    <header class="checkout-header">
+      <a href="index.html" class="back-link">&larr; Back to Machine</a>
+      <img src="assets/sansay-logo.jpg" alt="Sansay" class="checkout-logo">
+    </header>
+
+    <main class="checkout-main">
+      <div class="checkout-card">
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <div class="order-item">
+            <span>
+              <span class="order-name" id="orderName">—</span>
+              <span class="order-slot" id="orderSlot">--</span>
+            </span>
+            <span class="order-price" id="orderPrice">$0</span>
+          </div>
+        </div>
+
+        <!-- Payment Form -->
+        <form id="paymentForm" class="payment-form" autocomplete="off" novalidate>
+          <h2>Payment Details</h2>
+
+          <div class="form-group">
+            <label for="cardName">Name on Card</label>
+            <input type="text" id="cardName" placeholder="Jane Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="19" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cardExpiry">Expiration</label>
+              <input type="text" id="cardExpiry" inputmode="numeric" placeholder="MM / YY" maxlength="7" required>
+            </div>
+            <div class="form-group">
+              <label for="cardCvc">CVC</label>
+              <input type="text" id="cardCvc" inputmode="numeric" placeholder="123" maxlength="4" required>
+            </div>
+            <div class="form-group">
+              <label for="cardZip">ZIP Code</label>
+              <input type="text" id="cardZip" inputmode="numeric" placeholder="12345" maxlength="10" required>
+            </div>
+          </div>
+
+          <button type="submit" class="pay-button" id="payButton">
+            Pay <span id="payAmount">$0</span>
+          </button>
+        </form>
+
+        <!-- Success State -->
+        <div class="success-message" id="successMessage">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+          </div>
+          <h2>Mock Purchase Complete!</h2>
+          <p>This is a demo — no payment was processed.</p>
+          <a href="index.html" class="back-button">Back to Vending Machine</a>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/checkout.js"></script>
+</body>
+</html>

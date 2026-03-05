@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sansay SHAKEN Cert — Certification On Demand</title>
+  <meta name="description" content="Get your STIR/SHAKEN certifications from the Sansay vending machine. Certification boosts on demand!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-bg">
+    <div class="machine-outer" id="machine">
+
+      <!-- ===== MARQUEE / TOP SIGNAGE ===== -->
+      <header class="machine-marquee">
+        <img src="assets/sansay-logo.jpg" alt="Sansay" class="marquee-logo">
+        <div class="marquee-text">
+          <h1>SHAKEN <span>CERT</span></h1>
+          <p>STIR/SHAKEN Certification Vending Machine</p>
+        </div>
+      </header>
+
+      <!-- ===== MACHINE CABINET ===== -->
+      <div class="machine-cabinet">
+
+        <!-- CONTROL PANEL (left on desktop, bottom on mobile) -->
+        <aside class="control-panel">
+          <div class="insert-label">INSERT $450 – $1,000</div>
+
+          <div class="led-display">
+            <div class="display-code" id="displayCode">--</div>
+            <div class="display-price" id="displayPrice">&nbsp;</div>
+          </div>
+
+          <div class="keypad" id="keypad">
+            <button data-key="A" class="key-letter">A</button>
+            <button data-key="B" class="key-letter">B</button>
+            <button data-key="C" class="key-letter">C</button>
+            <button data-key="D" class="key-letter">D</button>
+            <button data-key="1" class="key-number">1</button>
+            <button data-key="2" class="key-number">2</button>
+            <button data-key="3" class="key-number">3</button>
+            <button data-key="clear" class="key-action key-clear">CLR</button>
+            <button data-key="select" class="key-action key-select">VEND</button>
+          </div>
+
+          <div class="bill-slot">
+            <div class="bill-slot-opening"></div>
+            <span>BILLS $5 – $100</span>
+          </div>
+
+          <div class="coin-return"></div>
+
+          <div class="panel-lock" aria-hidden="true"></div>
+        </aside>
+
+        <!-- GLASS DOOR (right on desktop, top on mobile) -->
+        <main class="glass-door">
+          <div class="glass-frame">
+            <div class="glass-surface">
+              <div class="items-grid" id="itemsGrid">
+                <!-- Rendered by vending.js -->
+              </div>
+            </div>
+            <!-- Glass reflection overlays -->
+            <div class="glass-reflection"></div>
+            <div class="glass-shine"></div>
+          </div>
+        </main>
+
+      </div>
+
+      <!-- ===== PICKUP TRAY ===== -->
+      <div class="pickup-tray">
+        <div class="tray-label">CERT PICK-UP</div>
+        <div class="tray-area" id="trayArea">
+          <div class="tray-instruction" id="trayInstruction">Select an item above</div>
+        </div>
+        <div class="tray-flap"></div>
+      </div>
+
+      <!-- Ventilation grille -->
+      <div class="machine-vent" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/vending.js"></script>
+</body>
+</html>
